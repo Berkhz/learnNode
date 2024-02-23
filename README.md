@@ -10,13 +10,6 @@ O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrom
 
 O objetivo deste repositório é fornecer recursos e exemplos para ajudar no aprendizado de Node.js, cobrindo desde conceitos básicos até tópicos mais avançados.
 
-## Conteúdo
-
-- [Instalação](#instalação)
-- [Executando o código](#executando-o-código)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
-
 ## Instalação
 
 Para começar, é necessário ter o Node.js instalado em sua máquina. Você pode baixá-lo e instalá-lo a partir do site oficial: [nodejs.org](https://nodejs.org/).
@@ -24,4 +17,4 @@ Para começar, é necessário ter o Node.js instalado em sua máquina. Você pod
 Após a instalação, você pode clonar este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/learnNode.git
+git clone https://github.com/Berkhz/learnNode.git
