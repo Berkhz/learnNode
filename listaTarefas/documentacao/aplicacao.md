@@ -1,10 +1,10 @@
-https://dontpad.com/esoft5s-a-bussola
+### https://dontpad.com/esoft5s-a-bussola
 
-Express ou Fastify
+# Express ou Fastify
 
-check-list:
-[] - Entender a atividade, isso envolve ler a atividade
-[] - Instalar as dependencias
+- check-list:
+[x] - Entender a atividade, isso envolve ler a atividade
+[x] - Instalar as dependencias
 [] - Opcional - Criar um dockerfile e um docker-compose.yml pra criar o container do banco escolhido
 [] - Da um check se o servidor está funcionando
 [] - Criar a service para a entidade escolhida, e fazer o CRUD
@@ -14,7 +14,7 @@ check-list:
 [] - Partir para as rotas com regra de negócio
 
 	
-Entidades:
+### Entidades:
 
 - Usuário:
 	Atributos: ID, username, peso, senha, e-mail.
