@@ -3,7 +3,7 @@ import { describe, it, expect } from '@jest/globals'
 import BookModel from '../src/books/schemas/book.schema'
 import * as request from 'supertest'
 
-describe("Testabdi endpoints de books", () => {
+describe("Testando endpoints de books", () => {
     it('Deve inserir um livro no banco de dados', async () => {
         const bookModel = {
             title: "Androids sonham com ovelhas elétricas?",
