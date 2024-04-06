@@ -1,40 +1,39 @@
-import bookModel from "../schemas/categoria.scheme";
+import categoriaModel from "../schemas/categoria.scheme";
 import { CategoriaType } from "../types/categoria.type";
 
-class BookService {
-    async create(book: CategoriaType) {
-        const createdBook = await bookModel.create(book)
-        return createdBook
+class CategoriaService {
+    async create(categoria: CategoriaType) {
+        const createdCategoria = await categoriaModel.create(categoria)
+        return createdCategoria
     }
 
     async findAll() {
-        const findedBooks = await bookModel.find()
-        return findedBooks
+        const findedCategoria = await categoriaModel.find()
+        return findedCategoria
     }
 
     async findById(id: string) {
-        const findedBook = await bookModel.findById(id)
-        return findedBook
+        const findedCategoria = await categoriaModel.findById(id)
+        return findedCategoria
     }
 
-    async update(id: string, book: CategoriaType) {
-        const updateBook = await bookModel.findByIdAndUpdate(id, {
-            title: book.title,
-            author: book.author,
-            price: book.price
+    async update(id: string, categoria: CategoriaType) {
+        const updateCategoria = await categoriaModel.findByIdAndUpdate(id, {
+            id: categoria.id,
+            nome: categoria.nome,
+            cor: categoria.cor
         }, { new: true })
-        return updateBook
+        return updateCategoria
     }
 
     async delete(id: string) {
         try {
-            await bookModel.findByIdAndDelete(id)
-            return "Livro Removido"
+            await categoriaModel.findByIdAndDelete(id)
+            return "Categoria removida com sucesso"
         } catch (error) {
-            throw new Error(`Erro ao remover livro: ${error}`)
+            throw new Error(`Erro ao remover categoria: ${error}`)
         }
     }
 }
 
-
-export default new BookService()
+export default new CategoriaService()

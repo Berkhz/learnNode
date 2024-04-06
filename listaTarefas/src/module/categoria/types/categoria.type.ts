@@ -1,6 +1,5 @@
 export interface CategoriaType {
-    title: String
-    author: String
-    ISBN: String
-    price: Number
+    id: Number,
+    nome: String,
+    cor: String
 }
