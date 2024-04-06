@@ -1,4 +1,4 @@
-### https://dontpad.com/esoft5s-a-bussola
+### <https://dontpad.com/esoft5s-a-bussola>
 
 # Express ou Fastify
 
@@ -13,19 +13,16 @@
 [] - Testar as rotas
 [] - Partir para as rotas com regra de negócio
 
-	
-### Entidades:
+### Entidades
 
 - Usuário:
-	Atributos: ID, username, peso, senha, e-mail.
-	
+ Atributos: ID, username, peso, senha, e-mail.
+
 - Categoria:
-	Atributos: ID, nome, cor (para identificação visual).
+ Atributos: ID, nome, cor (para identificação visual).
 
 - Tarefa:
-	Atributos: ID, título, descrição, data de criação, data de conclusão, tipo, categoria (opcional), status (pendente, em andamento, concluída), e usuário associado.
-
-
+ Atributos: ID, título, descrição, data de criação, data de conclusão, tipo, categoria (opcional), status (pendente, em andamento, concluída), e usuário associado.
 
 Requisitos das Rotas (OPICIONAL - FAÇA POR ÚLTIMO):
 
