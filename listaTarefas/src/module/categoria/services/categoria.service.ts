@@ -1,5 +1,5 @@
-import categoriaModel from "../schemas/categoria.scheme";
-import { CategoriaType } from "../types/categoria.type";
+import categoriaModel from "../schemas/categoria.scheme"
+import { CategoriaType } from "../types/categoria.type"
 
 class CategoriaService {
     async create(categoria: CategoriaType) {

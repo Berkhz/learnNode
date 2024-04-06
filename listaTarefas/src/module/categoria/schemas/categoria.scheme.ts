@@ -4,6 +4,6 @@ const categoriaSchema = new Schema({
     id: Number,
     nome: String,
     cor: String
-}, { timestamps: true });
+}, { timestamps: true })
 
 export default model("Categoria", categoriaSchema)

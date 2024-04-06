@@ -13,13 +13,13 @@ const tarefaSchema = new Schema({
     dataCriacao: Date,
     dataConclusao: Date,
     tipo: String,
-    categoriaId: Number,
+    categoriaId: String,
     status: {
-        type: String,
-        enum: Object.values(StatusEnum)
+        type: Number,
+        enum: Object.keys(StatusEnum).map(key => parseInt(key))
     },
-    usuarioId: Number
-}, { timestamps: true });
+    usuarioId: String
+}, { timestamps: true })
 
 export { StatusEnum }
 export default model("Tarefa", tarefaSchema)

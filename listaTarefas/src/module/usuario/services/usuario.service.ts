@@ -1,5 +1,5 @@
-import usuarioModel from "../schemas/usuario.scheme";
-import { UsuarioType } from "../types/usuario.type";
+import usuarioModel from "../schemas/usuario.scheme"
+import { UsuarioType } from "../types/usuario.type"
 
 class UsuarioService {
     async create(usuario: UsuarioType) {

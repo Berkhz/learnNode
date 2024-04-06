@@ -1,3 +1,5 @@
+import { StatusEnum } from "../schemas/tarefa.scheme"; // Importando o enum StatusEnum
+
 export interface TarefaType {
     id: Number,
     titulo: String,
@@ -6,6 +8,6 @@ export interface TarefaType {
     dataConclusao: Date,
     tipo: String,
     categoriaId: Number,
-    status: Number,
+    status: typeof StatusEnum, 
     usuarioId: Number
 }

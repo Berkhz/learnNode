@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import tarefaService from "../services/tarefa.service";
+import tarefaService from "../services/tarefa.service"
 
 class TarefaController {
     async create(req: Request, res: Response) {

@@ -6,6 +6,6 @@ const usuarioSchema = new Schema({
     peso: Number,
     senha: String,
     email: String
-}, { timestamps: true });
+}, { timestamps: true })
 
 export default model("Usuario", usuarioSchema)

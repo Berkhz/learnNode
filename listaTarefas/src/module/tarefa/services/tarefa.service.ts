@@ -1,26 +1,26 @@
-import tarefaModel from "../schemas/tarefa.scheme";
-import usuarioModel from "../../usuario/schemas/usuario.scheme";
-import categoriaModel from "../../categoria/schemas/categoria.scheme";
-import { TarefaType } from "../types/tarefa.type";
+import tarefaModel, { StatusEnum } from "../schemas/tarefa.scheme"
+import usuarioModel from "../../usuario/schemas/usuario.scheme"
+import categoriaModel from "../../categoria/schemas/categoria.scheme"
+import { TarefaType } from "../types/tarefa.type"
 
 class TarefaService {
     async create(tarefa: TarefaType) {
-        const usuario = await usuarioModel.findById(tarefa.usuarioId);
+        const usuario = await usuarioModel.findById(tarefa.usuarioId)
         if (!usuario) {
-            throw new Error("Usuário não encontrado");
+            throw new Error("Usuário não encontrado")
         }
 
-        const categoria = await categoriaModel.findById(tarefa.categoriaId);
+        const categoria = await categoriaModel.findById(tarefa.categoriaId)
         if (!categoria) {
-            throw new Error("Categoria não encontrada");
+            throw new Error("Categoria não encontrada")
         }
 
         const createdTarefa = await tarefaModel.create({
             ...tarefa,
-            usuario: usuario._id,
-            categoria: categoria._id
-        });
-        return createdTarefa;
+            usuarioId: usuario._id,
+            categoriaId: categoria._id
+        })
+        return createdTarefa
     }
 
     async findAll() {
@@ -56,6 +56,5 @@ class TarefaService {
         }
     }
 }
-
 
 export default new TarefaService()
