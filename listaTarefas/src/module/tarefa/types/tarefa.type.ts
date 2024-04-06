@@ -5,6 +5,7 @@ export interface TarefaType {
     dataCriacao: Date,
     dataConclusao: Date,
     tipo: String,
+    categoriaId: Number,
     status: Number,
-    usuarioAssociado: String
+    usuarioId: Number
 }
