@@ -1,33 +1,32 @@
 import { Request, Response } from 'express'
-// import categoriaService from "../services/categoria.service";
+import tarefaService from "../services/tarefa.service";
 
+class TarefaController {
+    async create(req: Request, res: Response) {
+        const createdTarefa = await tarefaService.create(req.body)
+        res.status(201)
+        return res.json(createdTarefa)
+    }
 
-// class BookController {
-//     async create(req: Request, res: Response) {
-//         const createdCategoria = await categoriaService.create(req.body)
-//         res.status(201)
-//         return res.json(createdCategoria)
-//     }
+    async findAll(req: Request, res: Response) {
+        const findedTarefaS = await tarefaService.findAll()
+        return res.json(findedTarefaS)
+    }
 
-//     async findAll(req: Request, res: Response) {
-//         const findCategorias = await categoriaService.findAll()
-//         return res.json(findCategorias)
-//     }
+    async findById(req: Request, res: Response) {
+        const findTarefa = await tarefaService.findById(req.params.id)
+        return res.json(findTarefa)
+    }
 
-//     async findById(req: Request, res: Response) {
-//         const findCategoria = await categoriaService.findById(req.params.id)
-//         return res.json(findCategoria)
-//     }
+    async update(req: Request, res: Response) {
+        const updatedTarefa = await tarefaService.update(req.params.id, req.body)
+        return res.json(updatedTarefa)
+    }
 
-//     async update(req: Request, res: Response) {
-//         const updatedCategoria = await categoriaService.update(req.params.id, req.body)
-//         return res.json(updatedCategoria)
-//     }
+    async delete(req: Request, res: Response) {
+        const deleteMessage = await tarefaService.delete(req.params.id)
+        return res.json(deleteMessage)
+    }
+}
 
-//     async delete(req: Request, res: Response) {
-//         const deleteMessage = await categoriaService.delete(req.params.id)
-//         return res.json(deleteMessage)
-//     }
-// }
-
-// export default new BookController()
+export default new TarefaController()

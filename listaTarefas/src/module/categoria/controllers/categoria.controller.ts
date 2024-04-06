@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import categoriaService from "../services/categoria.service";
 
 
-class BookController {
+class CategoriaController {
     async create(req: Request, res: Response) {
         const createdCategoria = await categoriaService.create(req.body)
         res.status(201)
@@ -30,4 +30,4 @@ class BookController {
     }
 }
 
-export default new BookController()
+export default new CategoriaController()

@@ -1,10 +1,9 @@
 import { Schema, model } from 'mongoose'
 
-//	Atributos: ID, nome, cor (para identificação visual).
-const cateogiraSchema = new Schema({
+const categoriaSchema = new Schema({
     id: Number,
     nome: String,
     cor: String
 }, { timestamps: true });
 
-export default model("Book", cateogiraSchema)
+export default model("Categoria", categoriaSchema)

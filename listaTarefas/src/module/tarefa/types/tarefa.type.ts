@@ -1,6 +1,4 @@
-import { Schema, model } from 'mongoose'
-
-const tarefaSchema = new Schema({
+export interface TarefaType {
     id: Number,
     titulo: String,
     descricao: String,
@@ -9,6 +7,4 @@ const tarefaSchema = new Schema({
     tipo: String,
     status: Number,
     usuarioAssociado: String
-}, { timestamps: true });
-
-export default model("Tarefa", tarefaSchema)
+}
