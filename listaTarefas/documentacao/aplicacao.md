@@ -6,10 +6,10 @@
 [x] - Entender a atividade, isso envolve ler a atividade
 [x] - Instalar as dependencias
 [] - Opcional - Criar um dockerfile e um docker-compose.yml pra criar o container do banco escolhido
-[] - Da um check se o servidor está funcionando
-[] - Criar a service para a entidade escolhida, e fazer o CRUD
-[] - Fazer a controller
-[] - Criar as rotas no arquivo de rotas
+[x] - Da um check se o servidor está funcionando
+[x] - Criar a service para a entidade escolhida, e fazer o CRUD
+[x] - Fazer a controller
+[x] - Criar as rotas no arquivo de rotas
 [] - Testar as rotas
 [] - Partir para as rotas com regra de negócio
 
