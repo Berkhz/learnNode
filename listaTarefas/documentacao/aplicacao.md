@@ -10,7 +10,7 @@
 [x] - Criar a service para a entidade escolhida, e fazer o CRUD
 [x] - Fazer a controller
 [x] - Criar as rotas no arquivo de rotas
-[] - Testar as rotas
+[x] - Testar as rotas
 [] - Partir para as rotas com regra de negócio
 
 ### Entidades
