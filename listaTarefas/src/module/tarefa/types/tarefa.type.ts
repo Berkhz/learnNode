@@ -1,4 +1,4 @@
-import { StatusEnum } from "../schemas/tarefa.scheme"; // Importando o enum StatusEnum
+import { StatusEnum } from "../schemas/tarefa.scheme"
 
 export interface TarefaType {
     id: Number,

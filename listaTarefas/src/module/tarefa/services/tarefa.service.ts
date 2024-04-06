@@ -2,6 +2,7 @@ import tarefaModel, { StatusEnum } from "../schemas/tarefa.scheme"
 import usuarioModel from "../../usuario/schemas/usuario.scheme"
 import categoriaModel from "../../categoria/schemas/categoria.scheme"
 import { TarefaType } from "../types/tarefa.type"
+import { CategoriaType } from "../../categoria/types/categoria.type"
 
 class TarefaService {
     async create(tarefa: TarefaType) {
@@ -54,6 +55,44 @@ class TarefaService {
         } catch (error) {
             throw new Error(`Erro ao remover tarefa: ${error}`)
         }
+    }
+
+    async filtrarTaskCategoria(tarefa: TarefaType) {
+        const taskCategoria = await tarefaModel.find(tarefa.categoriaId)
+        return taskCategoria
+    }
+    
+    async taskAntiga(tarefa: TarefaType) {
+        const findTaskAntiga = await tarefaModel.find()
+        return findTaskAntiga    
+    }
+    
+    async agruparTaskPorCategoria(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async encontraDescricaoLonga(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async calculaConclusaoTasks(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async buscaTaskRecente(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async qtdTaskUsuario(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async listaTaskVencimento(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
+    }
+    
+    async listaTasksConcluidasPendentes(tarefa: TarefaType) {
+        throw new Error('Method not implemented.')
     }
 }
 
