@@ -58,41 +58,78 @@ class TarefaService {
     }
 
     async filtrarTaskCategoria(tarefa: TarefaType) {
-        const taskCategoria = await tarefaModel.find(tarefa.categoriaId)
-        return taskCategoria
+        try {
+            const taskCategoria = await tarefaModel.find(tarefa.categoriaId)
+            return taskCategoria
+        }
+        catch (error) {
+            throw new Error(`Erro ao filtrar tarefa por categoria: ${error}`)
+        }
     }
     
     async taskAntiga(tarefa: TarefaType) {
-        const findTaskAntiga = await tarefaModel.find()
-        return findTaskAntiga    
+        try {
+            const findTaskAntiga = await tarefaModel.find()
+            return findTaskAntiga   
+        } catch (error) {
+            throw new Error(`Erro ao filtrar tarefa antiga: ${error}`)
+        } 
     }
     
     async agruparTaskPorCategoria(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao agrupar task por categoria: ${error}`)
+        }
     }
     
     async encontraDescricaoLonga(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao encontrar descricao longa: ${error}`)
+        }
     }
     
     async calculaConclusaoTasks(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao calcular conclusão tarefa: ${error}`)
+        }
     }
     
     async buscaTaskRecente(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao buscar tarefa mais recente: ${error}`)
+        }
     }
     
     async qtdTaskUsuario(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+
+        } catch (error) {
+            throw new Error(`Erro ao buscar quantidade de tarefas por usuario: ${error}`)
+        } 
     }
     
     async listaTaskVencimento(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao listar task vencimento: ${error}`)
+        }
     }
     
     async listaTasksConcluidasPendentes(tarefa: TarefaType) {
-        throw new Error('Method not implemented.')
+        try {
+            
+        } catch (error) {
+            throw new Error(`Erro ao listar tasks concluidas e pendentes: ${error}`)
+        }
     }
 }
 
