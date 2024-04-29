@@ -2,7 +2,7 @@ import tarefaModel, { StatusEnum } from "../schemas/tarefa.scheme"
 import usuarioModel from "../../usuario/schemas/usuario.scheme"
 import categoriaModel from "../../categoria/schemas/categoria.scheme"
 import { TarefaType } from "../types/tarefa.type"
-import { CategoriaType } from "../../categoria/types/categoria.type"
+import tarefaScheme from "../schemas/tarefa.scheme"
 
 class TarefaService {
     async create(tarefa: TarefaType) {
@@ -59,7 +59,7 @@ class TarefaService {
 
     async filtrarTaskCategoria(tarefa: TarefaType) {
         try {
-            const taskCategoria = await tarefaModel.find(tarefa.categoriaId)
+            const taskCategoria = await tarefaModel.$where()
             return taskCategoria
         }
         catch (error) {
@@ -69,8 +69,11 @@ class TarefaService {
     
     async taskAntiga(tarefa: TarefaType) {
         try {
-            const findTaskAntiga = await tarefaModel.find()
-            return findTaskAntiga   
+            const findTaskAntiga = await tarefaModel
+                .find()
+                .sort({ dataCriacao: 1 }) 
+                .limit(1)
+            return findTaskAntiga[0]
         } catch (error) {
             throw new Error(`Erro ao filtrar tarefa antiga: ${error}`)
         } 
@@ -86,9 +89,14 @@ class TarefaService {
     
     async encontraDescricaoLonga(tarefa: TarefaType) {
         try {
-            
+            const descricaoLonga = await tarefaModel
+                .find()
+                .sort({ descricao: -1 }) 
+                .limit(1)
+    
+            return descricaoLonga[0]
         } catch (error) {
-            throw new Error(`Erro ao encontrar descricao longa: ${error}`)
+            throw new Error(`Erro ao encontrar a descrição mais longa: ${error}`)
         }
     }
     
@@ -102,7 +110,11 @@ class TarefaService {
     
     async buscaTaskRecente(tarefa: TarefaType) {
         try {
-            
+            const findTaskRecente = await tarefaModel
+                .find()
+                .sort({ dataCriacao: -1 }) 
+                .limit(1)
+            return findTaskRecente[0]
         } catch (error) {
             throw new Error(`Erro ao buscar tarefa mais recente: ${error}`)
         }
