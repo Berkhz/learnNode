@@ -58,7 +58,9 @@ class TarefaService {
 
     async filtrarTaskCategoria(tarefa: TarefaType) {
         try {
-
+            const tarefasPorCategoria = await tarefaModel
+            .find({ categoriaId: tarefa.categoriaId })
+            return tarefasPorCategoria
         }
         catch (error) {
             throw new Error(`Erro ao filtrar tarefa por categoria: ${error}`)
@@ -79,7 +81,7 @@ class TarefaService {
     
     async agruparTaskPorCategoria(tarefa: TarefaType) {
         try {
-            
+            // F no chat
         } catch (error) {
             throw new Error(`Erro ao agrupar task por categoria: ${error}`)
         }
@@ -91,7 +93,6 @@ class TarefaService {
                 .find()
                 .sort({ descricao: -1 }) 
                 .limit(1)
-    
             return descricaoLonga[0]
         } catch (error) {
             throw new Error(`Erro ao encontrar a descrição mais longa: ${error}`)
@@ -100,7 +101,8 @@ class TarefaService {
     
     async calculaConclusaoTasks(tarefa: TarefaType) {
         try {
-            
+            const findDataConclusaoTasks = await tarefaModel
+            .find({ dataConclusao: { $ne: null } })
         } catch (error) {
             throw new Error(`Erro ao calcular conclusão tarefa: ${error}`)
         }
@@ -120,7 +122,8 @@ class TarefaService {
     
     async qtdTaskUsuario(tarefa: TarefaType) {
         try {
-
+            const findTaskUsuario = await tarefaModel
+            .find({ usuarioId: tarefa.usuarioId })
         } catch (error) {
             throw new Error(`Erro ao buscar quantidade de tarefas por usuario: ${error}`)
         } 
@@ -128,7 +131,9 @@ class TarefaService {
     
     async listaTaskVencimento(tarefa: TarefaType) {
         try {
-            
+            const findTasksAVencer = await tarefaModel
+            .find()
+            .sort({ dataConclusao: -1 }) 
         } catch (error) {
             throw new Error(`Erro ao listar task vencimento: ${error}`)
         }
