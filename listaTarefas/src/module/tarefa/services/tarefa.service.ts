@@ -2,7 +2,6 @@ import tarefaModel, { StatusEnum } from "../schemas/tarefa.scheme"
 import usuarioModel from "../../usuario/schemas/usuario.scheme"
 import categoriaModel from "../../categoria/schemas/categoria.scheme"
 import { TarefaType } from "../types/tarefa.type"
-import tarefaScheme from "../schemas/tarefa.scheme"
 
 class TarefaService {
     async create(tarefa: TarefaType) {
@@ -59,8 +58,7 @@ class TarefaService {
 
     async filtrarTaskCategoria(tarefa: TarefaType) {
         try {
-            const taskCategoria = await tarefaModel.$where()
-            return taskCategoria
+
         }
         catch (error) {
             throw new Error(`Erro ao filtrar tarefa por categoria: ${error}`)
@@ -138,9 +136,11 @@ class TarefaService {
     
     async listaTasksConcluidasPendentes(tarefa: TarefaType) {
         try {
-            
+            const tasksConcluidasPendentes = await tarefaModel
+                .find({ status: { $in: ['Concluída', 'Pendente'] } })
+            return tasksConcluidasPendentes
         } catch (error) {
-            throw new Error(`Erro ao listar tasks concluidas e pendentes: ${error}`)
+            throw new Error(`Erro ao listar tasks concluídas e pendentes: ${error}`)
         }
     }
 }

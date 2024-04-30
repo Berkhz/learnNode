@@ -26,6 +26,7 @@ routes.get('/tarefa/:id', tarefaController.findById)
 routes.put('/tarefa/:id', tarefaController.update)
 routes.delete('/tarefa/:id', tarefaController.delete)
 
+// Tarefas adicionais
 routes.get('/tarefa/filtrar', tarefaController.filtrarTaskCategoria)
 routes.get('/tarefa/antiga', tarefaController.taskAntiga)
 routes.get('/tarefa/listar', tarefaController.listaTasksConcluidasPendentes)
